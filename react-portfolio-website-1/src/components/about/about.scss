@@ -5,6 +5,7 @@
 }
 
 .about__me {
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 2rem;
@@ -66,7 +67,7 @@
 }
 
 .about__content p {
-  margin: 2rem 0 0.2rem;
+  margin: 2rem 2rem 1rem 0;
   color: var(--color-light);
 }
 

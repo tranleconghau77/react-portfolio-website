@@ -1,20 +1,21 @@
-var removeKdigits = function (num, k) {
-  let temp = num.split("");
-  let length = temp.length;
-  let l = 0;
-  let r = length - 1;
-  let list = num.split("");
-  let min;
-  list.splice(1, 3);
-  min = list;
-  list.splice(1, 3);
-  while (l <= r) {
-    let tempArray = num.split("");
-    min = Math.min(tempArray.slice(l, k + l + 1).join("") / 1, min);
-    list = temp;
-    l++;
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  const sO = {};
+  const tO = {};
+  let N = s.length;
+  for (let i = 0; i < N; i++) {
+    if (!sO[s[i]]) sO[s[i]] = 0;
+    if (!tO[t[i]]) tO[t[i]] = 0;
+    sO[s[i]]++;
+    tO[t[i]]++;
   }
-  return 1;
+  console.log(sO, tO);
+  if (Object.keys(sO).length === 0) return false;
+  for (let ch in sO) {
+    if (sO[ch] !== tO[ch]) {
+      return false;
+    }
+  }
+  return true;
 };
-
-removeKdigits("1432219", 3);
+isAnagram("a", "a");
